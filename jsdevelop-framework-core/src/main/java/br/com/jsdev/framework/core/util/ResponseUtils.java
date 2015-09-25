@@ -1,7 +1,6 @@
 package br.com.jsdev.framework.core.util;
 
 import javax.ws.rs.WebApplicationException;
-import javax.ws.rs.core.GenericEntity;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.ResponseBuilder;
 import javax.ws.rs.core.UriInfo;
@@ -13,7 +12,7 @@ import br.com.jsdev.framework.core.wrapper.OutDataPager;
 
 public class ResponseUtils {
 	
-	public static ResponseBuilder getPagerResponseBuilder(OutDataPager response, InDataPager request) {
+	public static ResponseBuilder getPagerResponseBuilder(@SuppressWarnings("rawtypes") OutDataPager response, InDataPager request) {
 		
 		Integer limit = request.getMaxResults();
 		Integer page =  (request.getFirstResult() / request.getMaxResults()) + 1;
@@ -28,7 +27,7 @@ public class ResponseUtils {
 				.header("x-jsdev-meta-current-page", page);
 	}
 
-	public static Response buildPager(OutDataPager response, InDataPager request) {
+	public static Response buildPager(@SuppressWarnings("rawtypes") OutDataPager response, InDataPager request) {
 		return getPagerResponseBuilder(response, request).entity(response.getResults()).build();
 	}
 	

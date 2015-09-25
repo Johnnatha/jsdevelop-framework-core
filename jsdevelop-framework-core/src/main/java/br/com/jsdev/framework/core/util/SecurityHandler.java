@@ -15,6 +15,7 @@ import javax.xml.ws.handler.soap.SOAPMessageContext;
 
 import br.com.jsdev.framework.web.servlet.WebContext;
 
+@SuppressWarnings("restriction")
 public class SecurityHandler implements SOAPHandler<SOAPMessageContext> {
 
 	public static final String SECURITY_NS = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd";

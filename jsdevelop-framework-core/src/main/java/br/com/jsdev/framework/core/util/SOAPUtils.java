@@ -18,8 +18,10 @@ import org.apache.commons.lang3.math.NumberUtils;
 
 import br.com.jsdev.framework.web.servlet.WebContext;
 
+@SuppressWarnings("restriction")
 public class SOAPUtils {
 
+	
 	public static <E extends Service> E createService(Class<E> clazz) {
 		try {
 			WebServiceClient client = clazz.getAnnotation(WebServiceClient.class);

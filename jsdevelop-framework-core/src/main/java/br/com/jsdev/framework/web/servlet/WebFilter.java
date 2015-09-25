@@ -83,6 +83,7 @@ public class WebFilter implements Filter {
 	}
 
 
+	@SuppressWarnings("unused")
 	private boolean validateSpaUsername(final HttpServletRequest httpRequest, final UserConfig userConfig, final HttpServletResponse httpResponse) throws UnsupportedEncodingException {
 		String requestUserName = httpRequest.getHeader(SPA_USERNAME);
 		// No caso de não haver header, testa cookies:
